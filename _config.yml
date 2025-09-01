@@ -1,0 +1,103 @@
+title: "Your Name"
+name: "Your Name"
+description: "Researcher at ..."
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Use Minimal Mistakes via remote_theme
+remote_theme: "mmistakes/minimal-mistakes"
+
+# Minimal Mistakes skin (see docs for alternatives)
+minimal_mistakes_skin: "default"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+paginate: 5
+
+timezone: Europe/Berlin
+
+# Collections for sections
+collections:
+  talks:
+    output: true
+    permalink: /talks/:path/
+  teaching:
+    output: true
+    permalink: /teaching/:path/
+  news:
+    output: true
+    permalink: /news/:path/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-scholar
+
+# jekyll-scholar settings
+scholar:
+  style: apa
+  source: _bibliography
+  bibliography: papers.bib
+  bibliography_template: bibliography
+  details_dir: bibliography
+  query: "@*"
+
+# Navigation (linked to _data/navigation.yml)
+include:
+  - _pages
+
+# Author (used by theme)
+author:
+  name: "Your Name"
+  avatar: "/assets/img/headshot.jpg"
+  bio: "Short bio goes here."
+  links:
+    - label: Email
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:you@example.com"
+    - label: Google Scholar
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/"
+    - label: GitHub
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/yourusername"
+    - label: Twitter
+      icon: "fab fa-fw fa-x-twitter"
+      url: "https://twitter.com/yourhandle"
+
+defaults:
+  # Default layout for pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # Default layout for posts (if you use _posts as well)
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+  # Layouts for collections
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: single
+      author_profile: true
